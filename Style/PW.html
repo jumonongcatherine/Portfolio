@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catherine's Portfolio - Projects/Works</title>
+
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<style>
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* BACKGROUND + BODY */
+body {
+  background: linear-gradient(135deg, #A8C686 0%, #2F4F1A 100%);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* NAVIGATION BAR */
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background: rgba(47, 79, 26, 0.6);
+  backdrop-filter: blur(6px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  font-size: 1rem;
+}
+
+nav ul li a:hover {
+  color: #A8C686;
+}
+
+/* Hide Projects/Works button on this page */
+nav ul li:nth-child(3) {
+  visibility: hidden;
+}
+
+/* MAIN CONTENT */
+.content {
+  flex: 1;
+  text-align: center;
+  padding: 100px 10%;
+  animation: fadeIn 1.2s ease-in;
+}
+
+.content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  margin-bottom: 40px;
+}
+
+/* PROJECT CARDS GRID */
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  margin-top: 20px;
+}
+
+/* PROJECT CARD BASE STYLE */
+.project-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  position: relative;
+  min-height: 420px; /* 👈 enough room for both states */
+}
+
+.project-card:hover {
+  transform: scale(1.02);
+}
+
+.project-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: #A8C686;
+  margin-bottom: 10px;
+}
+
+/* Image styles */
+.project-card img {
+  width: 80%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  transition: all 0.6s ease;
+}
+
+/* Project 2 image grid (2x2 layout) */
+.project2 .photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-bottom: 15px;
+  transition: all 0.6s ease;
+}
+
+/* Make the 4th image smaller */
+.project2 .photo-grid img:nth-child(4) {
+  width: 80%;
+  justify-self: center;
+  align-self: center;
+}
+
+/* Description styles */
+.project-card p {
+  font-size: 1.3rem;         /* 👈 Bigger text */
+  line-height: 1.8;          /* 👈 More readable spacing */
+  font-weight: 400;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.6s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  transform: translate(-50%, -50%);
+  text-align: justify;
+  background: rgba(0, 0, 0, 0.55);
+  padding: 20px;             /* 👈 More breathing room */
+  border-radius: 12px;
+  letter-spacing: 0.5px;     /* 👈 Subtle elegance */
+}
+
+
+/* --- ACTIVE STATE --- */
+
+/* Hide image and show text */
+.project-card.active img,
+.project-card.active .photo-grid {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.project-card.active p {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Reverse animation (closing) */
+.project-card.closing p {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.project-card.closing img,
+.project-card.closing .photo-grid {
+  transform: translateX(0);
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<header>
+  <div class="logo">Catherine’s Portfolio</div>
+  <nav>
+    <ul>
+      <li><a href="Home.html">Home</a></li>
+      <li><a href="About.html">About Me</a></li>
+      <li><a href="PW.html">Projects/Works</a></li>
+      <li><a href="Vid.html">Video Introduction</a></li>
+      <li><a href="Contact.html">Contact</a></li>
+      <li><a href="Resume.html">Resume</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- MAIN CONTENT -->
+<div class="content">
+  <h1>My Projects & Works</h1>
+
+  <div class="projects-container">
+
+    <!-- PROJECT 1 -->
+    <div class="project-card project1">
+      <img src="kdrama.jpg" alt="Project 1">
+      <h3>K-DRAMA</h3>
+      <p>I’m someone who finds peace and happiness in the world of K-dramas. Watching them is my comfort after long days — a way to relax, reflect, and feel inspired. I love how each story carries emotions that connect deeply with real life — love, hope, and friendship. For me, K-dramas aren’t just shows; they’re small escapes that remind me to stay kind, dream big, and enjoy life’s simple moments.</p>
+    </div>
+
+    <!-- PROJECT 2 -->
+    <div class="project-card project2">
+      <div class="photo-grid">
+        <img src="PET1.jpg" alt="Project 2 - Image 1">
+        <img src="PET2.jpg" alt="Project 2 - Image 2">
+        <img src="PET3.jpg" alt="Project 2 - Image 3">
+        <img src="PET4.jpg" alt="Project 2 - Image 4">
+      </div>
+      <h3>PETS</h3>
+      <p>My pets are a big part of my life — Buro, Tali, Jacco, and Murp. Buro, my dog, is the most energetic and loyal companion anyone could ask for. Tali, one of my cats, is calm and lazy, Jacco is playful and curious, and Murp, my hamster, never runs out of energy. Each of them has a unique personality, but together, they fill my life with joy and love.</p>
+    </div>
+
+    <!-- PROJECT 3 -->
+    <div class="project-card project3">
+      <img src="soduko.jpg" alt="Project 3">
+      <h3>SOLVING SUDOKU</h3>
+      <p>Sudoku has always been my favorite way to relax and challenge my mind at the same time. Every game feels like a small victory — it teaches patience and gives peace, helping me focus while enjoying problem-solving.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+const cards = document.querySelectorAll('.project-card');
+
+cards.forEach(card => {
+  card.addEventListener('click', () => {
+    if (card.classList.contains('active')) {
+      card.classList.remove('active');
+      card.classList.add('closing');
+      setTimeout(() => card.classList.remove('closing'), 600);
+    } else {
+      cards.forEach(c => {
+        c.classList.remove('active');
+        c.classList.remove('closing');
+      });
+      card.classList.add('active');
+    }
+  });
+});
+</script>
+
+</body>
+</html>
