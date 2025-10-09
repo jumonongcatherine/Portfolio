@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catherine's Portfolio</title>
+
+  <!-- 🌸 GOOGLE FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+  <!-- 🌸 ICONS (for search icon) -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <style>
+    /* 🌿 RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* 🌈 BACKGROUND + BODY */
+    body {
+      background: linear-gradient(135deg, #A8C686 0%, #2F4F1A 100%);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* 🧭 NAVIGATION BAR */
+    header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8%;
+      background: rgba(47, 79, 26, 0.6);
+      backdrop-filter: blur(6px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    /* 👑 LEFT SIDE TITLE */
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    /* 📜 NAVIGATION LINKS */
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      font-size: 1rem;
+    }
+
+    nav ul li a:hover {
+      color: #A8C686;
+    }
+    /* 💬 Hides the "About Me" button (2nd item in the navigation bar) on this page */
+nav ul li:nth-child(2) {
+  visibility: hidden;
+}
+
+
+    /* 🔍 SEARCH BAR */
+    .search-container {
+      display: flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 6px 12px;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .search-container:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .search-container input {
+      border: none;
+      background: transparent;
+      outline: none;
+      color: #fff;
+      font-size: 0.9rem;
+      width: 120px;
+      transition: width 0.3s ease;
+    }
+
+    .search-container input::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .search-container:focus-within input {
+      width: 160px;
+    }
+
+    .search-container .material-icons {
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    /* 🌬️ MAIN CONTENT AREA */
+    .content {
+      flex: 1;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 100px 10%;
+      animation: fadeIn 1.2s ease-in;
+    }
+
+    /* ✨ TEXT SECTION */
+    .text-section {
+      max-width: 50%;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      height: 100%;
+      padding-left: 80px;
+    }
+
+    /* 💬 TITLE */
+    .text-section h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 5.5rem;
+      margin-bottom: 25px;
+    }
+
+    /* 💬 PERSONAL DETAILS */
+    .info {
+      font-size: 1.5rem;
+      line-height: 2;
+      opacity: 1;
+    }
+
+    .info strong {
+      color: #A8C686;
+    }
+
+    /* 🖼️ IMAGE SECTION */
+    .image-section {
+      max-width: 50%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .image-section img {
+      width: 450px;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .image-section img:hover {
+      transform: scale(1.03);
+    }
+
+    /* 🌟 ANIMATION */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* 📱 RESPONSIVE DESIGN */
+    @media (max-width: 900px) {
+      .content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .text-section, .image-section {
+        max-width: 100%;
+      }
+
+      .image-section img {
+        width: 70%;
+        margin-bottom: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🧭 TOP NAVIGATION BAR -->
+  <header>
+    <div class="logo">Catherine’s Portfolio</div>
+
+    <nav>
+      <ul>
+        <li><a href="Home.html">Home</a></li>
+       <li><a href="About.html">About Me</a></li>
+        <li><a href="PW.html">Projects/Works</a></li>
+        <li><a href="Vid.html">Video Introduction</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+        <li><a href="Resume.html">Resume</a></li>
+      </ul>
+
+      <!-- 🔍 SEARCH BAR -->
+      <div class="search-container">
+        <input type="text" placeholder="Search..." />
+        <span class="material-icons">search</span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- 🌬️ MAIN CONTENT AREA -->
+  <div class="content">
+
+    <!-- 🖼️ IMAGE SECTION (Left Side) -->
+    <div class="image-section">
+      <!-- 💬 Replace this with your actual image later -->
+      <img src="Cathy's_about.jpg" alt="Catherine's About Me Photo">
+    </div>
+
+    <!-- 💬 TEXT SECTION (Centered Vertically) -->
+    <div class="text-section">
+      <h1>About Me</h1>
+
+      <div class="info">
+        <p><strong>Name:</strong> Catherine Castanares-Jumonong</p>
+        <p><strong>Age:</strong> 18</p>
+        <p><strong>Birthday:</strong> March 30, 2007</p>  
+        <p><strong>Contact Number:</strong> +63 993 488 0921</p>
+        <p><strong>Course:</strong> COED BEED-1</p>
+        <p><strong>Address:</strong> Ochoa Ave. Purok 2, Limaha, Butuan City</p>
+        <p><strong>Email:</strong> jumonongcatherine@gmail.com</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
